@@ -7,7 +7,7 @@ resource "aws_iam_group" "group" {
 
 # Attaching policies to the group
 resource "aws_iam_group_policy_attachment" "group_policy_attachment" {
-  for_each   = toset(var.policy_arns)
+  for_each   = toset(var.policy_arn)
   group      = aws_iam_group.group.name
   policy_arn = each.value
 }

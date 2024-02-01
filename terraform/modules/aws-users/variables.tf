@@ -17,8 +17,14 @@ variable "user_tags" {
   default     = {}
 }
 
-variable "pgp_key" {
-  description = "PGP key used in the creation of the IAM user login profile"
-  type        = string
-  default     = ""
+# variable "pgp_key" {
+#   description = "PGP key used in the creation of the IAM user login profile"
+#   type        = string
+#   default     = ""
+# }
+
+variable "user_groups" {
+  description = "List of IAM groups the user should be a member of"
+  type        = list(string)
+  default     = []
 }
