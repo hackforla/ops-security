@@ -7,5 +7,4 @@ module "iam_user_gwenstacy" {
     "Project"     = "spiderverse"
   }
   user_groups = ["read-only-group"]
-  # pgp_key = "keybase:chelseybeck"
 }
