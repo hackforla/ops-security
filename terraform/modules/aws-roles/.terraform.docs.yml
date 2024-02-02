@@ -25,9 +25,7 @@ content: |-
   {{ .Providers }}
   {{ .Requirements }}
   {{ .Footer }}
-  To automatically update this documentation, install terraform-docs on your local machine run the following: 
-      cd <directory of README location to update>
-      terraform-docs -c .terraform.docs.yml . 
+
 output:
   file: README.md
   mode: replace

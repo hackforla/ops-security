@@ -26,8 +26,4 @@ This module declares all of the resources necessary to create AWS IAM policies.
 |------|---------|
 | <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
 
-
-To automatically update this documentation, install terraform-docs on your local machine run the following: 
-    cd <directory of README location to update>
-    terraform-docs -c .terraform.docs.yml . 
 <!-- END_TF_DOCS -->    
