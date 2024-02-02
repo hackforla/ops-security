@@ -1,8 +1,7 @@
 <!-- BEGIN_TF_DOCS -->
 # Overview
-This module declares all of the resources necessary to create AWS IAM related resources.
+Resources created by this code repository.
 
-# Terraform Directory
 
 ## Modules
 
@@ -15,10 +14,7 @@ This module declares all of the resources necessary to create AWS IAM related re
 
 
 
-
-To automatically update this documentation, install terraform-docs on your local machine run the following: 
-    cd <directory of README location to update>
-    terraform-docs -c .terraform.docs.yml . 
+ 
 
 # Directory Structure
 Terraform directory structure
@@ -31,4 +27,7 @@ Terraform directory structure
   - 📄 [aws-groups.tf](https://github.com/hackforla/ops-security/tree/cb/example/terraform/modules/aws-groups) - maintain groups here
   - 📄 [aws-users.tf](https://github.com/hackforla/ops-security/tree/cb/example/terraform/modules/aws-users) - maintain users here
     
+To automatically update this documentation, install terraform-docs on your local machine run the following: 
+`cd <directory of README location to update>`
+`terraform-docs -c .terraform.docs.yml .`
 <!-- END_TF_DOCS -->    
