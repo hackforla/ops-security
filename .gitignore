@@ -7,11 +7,12 @@
 # Ignore override files
 *.tfoverride
 
-
-
 # Ignore environment-specific files
 .envrc
 
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+
+# Ignore metadata files
+*.tfstate.lock.info

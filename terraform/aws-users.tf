@@ -1,3 +1,4 @@
+// Create user and assign to group(s)
 module "iam_user_gwenstacy" {
   source = "./modules/aws-users"
 
