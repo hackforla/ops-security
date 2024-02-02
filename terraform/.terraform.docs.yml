@@ -1,0 +1,72 @@
+formatter: "markdown table" # this is required
+version: ""
+
+header-from: main.tf
+footer-from: ""
+
+recursive:
+  enabled: false
+  path: modules
+
+sections:
+  hide: []
+  show: []
+
+content: |-
+  # Overview
+  This module declares all of the resources necessary to create AWS IAM related resources.
+
+  # Terraform Directory
+  {{ .Header }}
+  {{ .Modules }}
+  {{ .Resources }}
+  {{ .Inputs }}
+  {{ .Outputs }}
+  {{ .Providers }}
+  {{ .Requirements }}
+  {{ .Footer }}
+  To automatically update this documentation, install terraform-docs on your local machine run the following: 
+      cd <directory of README location to update>
+      terraform-docs -c .terraform.docs.yml . 
+  
+  # Directory Structure
+  Terraform directory structure
+
+  - 📁 [terraform](https://github.com/hackforla/ops-security/tree/cb/example/terraform)
+    - 📁  [aws-custom-policies](https://github.com/hackforla/ops-security/tree/cb/example/terraform/aws-custom-policies) - JSON configurations for customer-managed policies (AWS-managed policies are referenced by ARN and not needed here)
+        - 📁 [existing-policies](https://github.com/hackforla/ops-security/tree/cb/example/terraform/aws-custom-policies/existing-policies) - a few of our current policy configurations for reference
+    - 📁 [modules](https://github.com/hackforla/ops-security/tree/cb/example/terraform/modules) - reusable Terraform configurations
+    - 📄 [aws-custom-policies.tf](https://github.com/hackforla/ops-security/tree/cb/example/terraform/modules/aws-groups) - maintain custom policies here
+    - 📄 [aws-groups.tf](https://github.com/hackforla/ops-security/tree/cb/example/terraform/modules/aws-groups) - maintain groups here
+    - 📄 [aws-users.tf](https://github.com/hackforla/ops-security/tree/cb/example/terraform/modules/aws-users) - maintain users here
+      
+output:
+  file: README.md
+  mode: replace
+  template: |-
+    <!-- BEGIN_TF_DOCS -->
+    {{ .Content }}
+    <!-- END_TF_DOCS -->    
+
+output-values:
+  enabled: false
+  from: ""
+
+sort:
+  enabled: true
+  by: name
+
+settings:
+  anchor: true
+  color: true
+  default: true
+  description: false
+  escape: true
+  hide-empty: true
+  html: true
+  indent: 2
+  lockfile: true
+  read-comments: true
+  required: true
+  sensitive: true
+  type: true
