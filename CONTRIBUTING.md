@@ -1,6 +1,6 @@
 # **How to Contribute to DevOps**
 
-Below are guidelines for contributing to the ops (DevOps) repository hosted on GitHub. These guidelines are primarily recommendations rather than strict rules. Use your discretion and feel free to suggest changes to this document by submitting a pull request.
+Below are guidelines for contributing to the devops-security repository hosted on GitHub. These guidelines are primarily recommendations rather than strict rules. Use your discretion and feel free to suggest changes to this document by submitting a pull request.
 
 **This guide assumes that you have finished the onboarding process, which involves joining the Hack for LA Slack, GitHub, and Google Drive. If you haven't completed onboarding yet, please visit the [Getting Started Page](https://www.hackforla.org/getting-started).**
 
@@ -15,9 +15,6 @@ Below are guidelines for contributing to the ops (DevOps) repository hosted on G
 - [**Setting up the local development environment**](#setting-up-the-local-development-environment)
     - [**Creating a personal AWS account**](#creating-a-personal-aws-account)
     - [**Installing Terraform**](#installing-terraform)
-        - [**MacOS installation**](#macos-installation)
-        - [**Windows installation**](#windows-installation)
-        - [**Linux installation**](#linux-installation)
     - [**Installing Terraform docs**](#installing-terraform-docs)
     - [**Fork the repository**](#fork-the-repository)
     - [**Clone (Create) a copy on your computer**](#clone-create-a-copy-on-your-computer)
@@ -38,79 +35,38 @@ Below are guidelines for contributing to the ops (DevOps) repository hosted on G
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
 
-## **Installing Terraform**
+### **Installing Terraform**
 
-We are using the [HashiCorp Tutorials](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli) for installing terraform.
-
-### **MacOS installation**
-
-In the guide we are using [homebrew](https://brew.sh) for the installation, make sure you have homebrew installed on your machine.
-
-- We will first install the `hashicorp tap` a repository of all the terraform homebrew packages, use the below command in your terminal.
-    
-    ```bash
-    brew tap hashicorp/tap
-    ```
-- Then install terraform with brew
-
-    ```bash
-    brew install terraform
-    ```
-    now confirm your installation with `terraform -help`.
-
-### **Windows installation**
-
-For windows installation we will use [choclatey](https://chocolatey.org) a free and open-source package management system for Windows.
-
-- Open the `PowerShell` terminal as an administrator and install the terraform package with 
-
-    ```bash
-    choco install terraform
-    ```
-- To confirm its installation close the current terminal and open a new `PowerShell` terminal as a normal user and use `terraform -help`.
-
-### **Linux installation**
-
-To install Terraform on your Linux distribution, visit the [HashiCorp Tutorial](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli) and follow the provided instructions for your specific distribution. After installation, verify Terraform by running `terraform -help` in your terminal.
+We are using the [Official HashiCorp install instructions](https://developer.hashicorp.com/terraform/install) for installing terraform.
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
 
-## **Installing Terraform docs**
+### **Installing Terraform docs**
 
-To install Terraform docs we will be using Docker, terraform-docs can be run as a container by mounting a directory with `.tf` files in it and run the following command:
-
-    ```bash
-    docker run --rm --volume "$(pwd):/terraform-docs" -u $(id -u) quay.io/terraform-docs/terraform-docs:0.17.0 markdown /terraform-docs
-    ```
-If `output.file` is not enabled for this module, generated output can be redirected back to a file:
-
-    ```bash
-    docker run --rm --volume "$(pwd):/terraform-docs" -u $(id -u) quay.io/terraform-docs/terraform-docs:0.17.0 markdown /terraform-docs > doc.md
-    ```
-**Note:** Docker tag `latest` refers to latest stable released version and `edge` refers to HEAD of `master` at any given point in time. And any named version tags are identical to the official GitHub releases without leading `v`.
+Follow the Terraform docs [installation guide](https://terraform-docs.io/user-guide/installation/)
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
 
 ## **Fork the repository**
 
-You can fork the hackforla/ops repository by clicking <a href="https://github.com/hackforla/ops/fork"> <button> <img src="https://user-images.githubusercontent.com/17777237/54873012-40fa5b00-4dd6-11e9-98e0-cc436426c720.png" width="8px"> Fork</button></a>
+You can fork the hackforla/devops-security repository by clicking <a href="https://github.com/hackforla/devops-security/fork"> <button> <img src="https://user-images.githubusercontent.com/17777237/54873012-40fa5b00-4dd6-11e9-98e0-cc436426c720.png" width="8px"> Fork</button></a>
 . A fork is a copy of the repository that will be placed on your GitHub account.
 
 <details>
-  <summary><strong>Click here</strong> to see a visual example of the `fork` button within the website repo</summary>
-  <p><strong>First, you find the `fork` button on the top right hand side of the [Hack for LA website repo](https://github.com/hackforla/website)</strong></h4>
+  <summary><strong>Click here</strong> to see a visual example of the `fork` button within the devops-security repo</summary>
+  <p><strong>First, you find the `fork` button on the top right hand side of the [Hack for LA devops-security repo](https://github.com/hackforla/devops-security)</strong></h4>
   <img src="https://user-images.githubusercontent.com/21162229/137044762-c80f18e8-b785-48fb-a286-81c1117c0178.jpg" />
-  <p><strong>Next, a modal may open and request where you want to fork this website repo. Please click on your avatar or your GitHub username</strong></p>
+  <p><strong>Next, a modal may open and request where you want to fork this devops-security repo. Please click on your avatar or your GitHub username</strong></p>
   <img src="https://user-images.githubusercontent.com/21162229/137045294-3d46b28c-edbb-410c-98f1-13940ecc5c5f.jpg" />
 </details><br>
 
-**Note:** It should create a URL that looks like the following -> `https://github.com/<your_GitHub_user_name>/website`.
+**Note:** It should create a URL that looks like the following -> `https://github.com/<your_GitHub_user_name>/devops-security`.
 
-**For example** -> `https://github.com/octocat/website`.
+**For example** -> `https://github.com/octocat/devops-security`.
 
-**Be Aware:** What you have created is a forked copy in a remote version on GitHub. It is not yet on your local machine yet.
+**Be Aware:** What you have created is a forked copy in a remote version on GitHub. It is not yet on your local machine.
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
@@ -130,18 +86,18 @@ cd hackforla
 and run the following commands:
 
 ```bash
-git clone https://github.com/<your_GitHub_user_name>/ops.git
+git clone https://github.com/<your_GitHub_user_name>/devops-security.git
 ```
 
 For example if your GitHub username was `octocat`:
 ```bash
-git clone https://github.com/octocat/ops.git
+git clone https://github.com/octocat/devops-security.git
 ```
 
-You should now have a new folder in your `hackforla` folder called `ops`. Verify this by changing into the new directory:
+You should now have a new folder in your `hackforla` folder called `devops-security`. Verify this by changing into the new directory:
 
 ```bash
-cd ops
+cd devops-security
 ```
 
 #### **Verify `origin` remote url**
@@ -150,21 +106,21 @@ Verify that your local cloned repository is pointing to the correct `origin` URL
 ```bash
 git remote -v
 ```
-You should see `fetch` and `push` URLs with links to your forked repository under your account (i.e. `https://github.com/<your_GitHub_user_name>/ops.git`). You are all set to make working changes to the website on your local machine.
+You should see `fetch` and `push` URLs with links to your forked repository under your account (i.e. `https://github.com/<your_GitHub_user_name>/devops-security.git`). You are all set to make working changes to the devops-security on your local machine.
 
-However, we still need a way to keep our local repo up to date with the deployed website. To do so, you must add an upstream remote to incorporate changes made while you are working on your local repo. Run the following to add an upstream remote URL & update your local repo with recent changes to the `hackforla` version:
+However, we still need a way to keep our local repo up to date with the deployed devops-security. To do so, you must add an upstream remote to incorporate changes made while you are working on your local repo. Run the following to add an upstream remote URL & update your local repo with recent changes to the `hackforla` version:
 
 ```bash
-git remote add upstream https://github.com/hackforla/ops.git
+git remote add upstream https://github.com/hackforla/devops-security.git
 git fetch upstream
 ```
 
 After adding the upstream remote, you should now see it if you again run `git remote -v` :
 ```bash
-origin  https://github.com/<your_GitHub_user_name>/ops.git (fetch)
-origin  https://github.com/<your_GitHub_user_name>/ops.git (push)
-upstream        https://github.com/hackforla/ops.git (fetch)
-upstream        https://github.com/hackforla/ops.git (push)
+origin  https://github.com/<your_GitHub_user_name>/devops-security.git (fetch)
+origin  https://github.com/<your_GitHub_user_name>/devops-security.git (push)
+upstream        https://github.com/hackforla/devops-security.git (fetch)
+upstream        https://github.com/hackforla/devops-security.git (push)
 ```
 #### **What if you accidentally cloned using the repository URL from the HackForLA Github (instead of the fork on your Github)?**
 
@@ -172,19 +128,19 @@ upstream        https://github.com/hackforla/ops.git (push)
 
 Set your forked repo on your Github as an `origin` remote:
 ```bash
-git remote set-url origin https://github.com/<your_GitHub_user_name>/ops.git
+git remote set-url origin https://github.com/<your_GitHub_user_name>/devops-security.git
 ```
 
 For example if your GitHub username was `octocat`:
 ```bash
-git remote set-url origin https://github.com/octocat/ops.git
+git remote set-url origin https://github.com/octocat/devops-security.git
 ```
 
 ##### **ii. Add an `upstream` remote**
 
 Add another remote called `upstream` that points to the `hackforla` version of the repository. This will allow you to incorporate changes later:
 ```bash
-git remote add upstream https://github.com/hackforla/ops.git
+git remote add upstream https://github.com/hackforla/devops-security.git
 ```
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
