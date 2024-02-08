@@ -32,8 +32,11 @@ jobs:
       run: terraform init
 
     - name: Terraform Plan
-      uses: dflook/terraform-plan@v1
-      with:
-        path: terraform
+      run: terraform plan
+
+    # - name: Terraform Plan
+    #   uses: dflook/terraform-plan@v1
+    #   with:
+    #     path: terraform
 
 
