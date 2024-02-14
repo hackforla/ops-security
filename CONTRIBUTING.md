@@ -1,4 +1,4 @@
-# **How to Contribute to DevOps**
+# **How to Contribute to DevOps Security**
 
 Below are guidelines for contributing to the devops-security repository hosted on GitHub. These guidelines are primarily recommendations rather than strict rules. Use your discretion and feel free to suggest changes to this document by submitting a pull request.
 
@@ -37,7 +37,7 @@ Below are guidelines for contributing to the devops-security repository hosted o
 
 ### **Installing Terraform**
 
-We are using the [Official HashiCorp install instructions](https://developer.hashicorp.com/terraform/install) for installing terraform.
+Use the [Official HashiCorp install instructions](https://developer.hashicorp.com/terraform/install) for installing terraform.
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
@@ -51,7 +51,7 @@ Follow the Terraform docs [installation guide](https://terraform-docs.io/user-gu
 
 ## **Fork the repository**
 
-You can fork the hackforla/devops-security repository by clicking <a href="https://github.com/hackforla/devops-security/fork"> <button> <img src="https://user-images.githubusercontent.com/17777237/54873012-40fa5b00-4dd6-11e9-98e0-cc436426c720.png" width="8px"> Fork</button></a>
+Fork the hackforla/devops-security repository by clicking <a href="https://github.com/hackforla/devops-security/fork"> <button> <img src="https://user-images.githubusercontent.com/17777237/54873012-40fa5b00-4dd6-11e9-98e0-cc436426c720.png" width="8px"> Fork</button></a>
 . A fork is a copy of the repository that will be placed on your GitHub account.
 
 <details>
