@@ -23,8 +23,15 @@ jobs:
       run: |
         pip install boto3
 
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: AWS_ACCESS_KEY_ID
+        aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+        aws-region: us-west-2 
+
     - name: List S3 Buckets
       env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_ACCESS_KEY_ID: AWS_ACCESS_KEY_ID
+        AWS_SECRET_ACCESS_KEY: AWS_SECRET_ACCESS_KEY
       run: python python/list_buckets.py
