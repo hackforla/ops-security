@@ -1,5 +1,5 @@
-name: 'Request AWS IAM user account'
-description: 'Use this form to request an AWS IAM user account.'
+name: 'Request AWS IAM user or service account'
+description: 'Issue for requesting IAM accounts'
 labels: ['enhancement']
 
 body: 
