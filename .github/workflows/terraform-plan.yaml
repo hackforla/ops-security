@@ -12,9 +12,15 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+    defaults:
+      run:
+        working-directory: terraform
+    permissions:
+      pull-requests: write
+
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Set up Terraform
       uses: hashicorp/setup-terraform@v3
@@ -30,8 +36,3 @@ jobs:
 
     - name: Terraform Init
       run: terraform init
-
-    - name: Terraform Plan
-      uses: dflook/terraform-plan@v1
-      with:
-        path: terraform
