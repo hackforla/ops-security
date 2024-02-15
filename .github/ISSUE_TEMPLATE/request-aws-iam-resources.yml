@@ -1,5 +1,4 @@
 name: 'Request AWS IAM resources'
-description: 'Issue for requesting IAM accounts, groups, roles or policies'
 title: 'Request AWS IAM resources'
 labels: ['enhancement']
 
@@ -28,7 +27,7 @@ body:
     - type: textarea
       id: additional-info
       attributes: 
-        labels: Addtional Information
+        label: Additional Information
         description: Any other information you want to provide
       validations:
         required: false    
