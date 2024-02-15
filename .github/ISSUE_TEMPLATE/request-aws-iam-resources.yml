@@ -10,7 +10,7 @@ body:
         description: Provide github handle of new user or service account name (if requesting for a service)
       validations: 
         required: true
-    - type: textarea
+    - type: input
       id: project-name
       attributes:
         label: Project(s) Name
