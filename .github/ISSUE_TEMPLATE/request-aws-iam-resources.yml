@@ -1,6 +1,5 @@
-name: 'Request AWS IAM resources'
-description: 'Issue for requesting IAM accounts, groups, roles or policies'
-title: 'Request AWS IAM resources'
+name: 'Request AWS IAM user or service account'
+description: 'Issue for requesting IAM accounts'
 labels: ['enhancement']
 
 body: 
@@ -11,7 +10,7 @@ body:
         description: Provide github handle of new user or service account name (if requesting for a service)
       validations: 
         required: true
-    - type: textarea
+    - type: input
       id: project-name
       attributes:
         label: Project(s) Name
@@ -28,7 +27,7 @@ body:
     - type: textarea
       id: additional-info
       attributes: 
-        labels: Addtional Information
+        label: Additional Information
         description: Any other information you want to provide
       validations:
         required: false    
