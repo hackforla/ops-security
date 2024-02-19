@@ -12,6 +12,9 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+    defaults:
+      run:
+        working-directory: terraform
     permissions:
       pull-requests: write
 
@@ -25,5 +28,5 @@ jobs:
 
     - name: Terraform Plan
       uses: dflook/terraform-plan@v1
-      with:
-        path: terraform
+      # with:
+      #   path: terraform
