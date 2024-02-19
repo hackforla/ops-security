@@ -6,16 +6,14 @@ on:
       - main  # or any other branch you want to trigger the deployment
 
 jobs:
-  terraform:
+  terraform-plan:
     name: Terraform Plan
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-    defaults:
-      run:
-        working-directory: terraform
     permissions:
+      contents: read
       pull-requests: write
 
     steps:
@@ -28,5 +26,5 @@ jobs:
 
     - name: Terraform Plan
       uses: dflook/terraform-plan@v1
-      # with:
-      #   path: terraform
+      with:
+        path: terraform
