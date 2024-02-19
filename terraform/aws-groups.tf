@@ -3,5 +3,5 @@ module "iam_read_only_group" {
   source = "./modules/aws-groups"
 
   group_name = "read-only-group"
-  policy_arn = ["arn:aws:iam::aws:policy/ReadOnlyAccess"]
+  policy_arn = ["arn:aws:iam::aws:policy/ReadOnlyAccess", "arn:aws:iam::aws:policy/IAMUserChangePassword"]
 }
