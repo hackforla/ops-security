@@ -4,7 +4,7 @@ module "iam_user_JimmyJuarez10" {
 
   user_name = "JimmyJuarez10"
   user_tags = {
-    "Project"     = "civic-tech-jobs"
+    "Project" = "civic-tech-jobs"
   }
   user_groups = ["read-only-group"]
 }
@@ -14,7 +14,8 @@ module "iam_user_brittanyms" {
 
   user_name = "brittanyms"
   user_tags = {
-    "Project"     = "devops-security"
+    "Project"      = "devops-security"
+    "Access Level" = "1"
   }
   user_groups = ["read-only-group"]
 }
@@ -24,7 +25,8 @@ module "iam_user_freaky4wrld" {
 
   user_name = "freaky4wrld"
   user_tags = {
-    "Project"     = "devops-security"
+    "Project"      = "devops-security"
+    "Access Level" = "1"
   }
   user_groups = ["read-only-group"]
 }
@@ -34,7 +36,8 @@ module "iam_user_shikha0428" {
 
   user_name = "shikha0428"
   user_tags = {
-    "Project"     = "devops-security"
+    "Project"      = "devops-security"
+    "Access Level" = "1"
   }
   user_groups = ["read-only-group"]
 }
@@ -44,7 +47,8 @@ module "iam_user_shinjonathan" {
 
   user_name = "shinjonathan"
   user_tags = {
-    "Project"     = "devops-security"
+    "Project"      = "devops-security"
+    "Access Level" = "1"
   }
   user_groups = ["read-only-group"]
 }
@@ -54,7 +58,8 @@ module "iam_user_samuelusc" {
 
   user_name = "samuelusc"
   user_tags = {
-    "Project"     = "devops-security"
+    "Project"      = "devops-security"
+    "Access Level" = "1"
   }
   user_groups = ["read-only-group"]
 }
@@ -64,7 +69,8 @@ module "iam_user_abbyz123" {
 
   user_name = "abbyz123"
   user_tags = {
-    "Project"     = "devops-security"
+    "Project"      = "devops-security"
+    "Access Level" = "1"
   }
   user_groups = ["read-only-group"]
 }
@@ -74,7 +80,8 @@ module "iam_user_awlFCCamp" {
 
   user_name = "awlFCCamp"
   user_tags = {
-    "Project"     = "devops-security"
+    "Project"      = "devops-security"
+    "Access Level" = "1"
   }
   user_groups = ["read-only-group"]
 }
