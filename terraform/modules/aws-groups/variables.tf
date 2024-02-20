@@ -12,6 +12,6 @@ variable "group_path" {
 }
 
 variable "policy_arn" {
-  description = "List of policy ARNs to attach to the group"
-  type        = list(string)
+  description = "Map of policy names to ARNs to attach to the group"
+  type        = map(string)
 }
