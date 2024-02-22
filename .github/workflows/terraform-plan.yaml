@@ -3,7 +3,7 @@ name: Write Terraform Plan to Pull Request
 on:
   pull_request:
     branches:
-      - main  # or any other branch you want to trigger the deployment
+      - main
 
 jobs:
   terraform-plan:
