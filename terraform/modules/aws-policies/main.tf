@@ -5,5 +5,5 @@ resource "aws_iam_policy" "custom_policy" {
 
   name        = each.key
   description = each.value["description"]
-  policy      = file("${path.module}/policies-json/${each.value["filename"]}")
+  policy      = file("aws-custom-policies/${each.value["filename"]}")
 }

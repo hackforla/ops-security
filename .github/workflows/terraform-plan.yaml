@@ -1,39 +1,32 @@
-name: Deploy IAM Resources to AWS with Terraform
+name: Write Terraform Plan to Pull Request
 
 on:
-  pull-request:
+  pull_request:
     branches:
       - main  # or any other branch you want to trigger the deployment
 
 jobs:
-  terraform:
-    name: Terraform
+  terraform-plan:
+    name: Terraform Plan
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+    permissions:
+      contents: read
+      pull-requests: write
+
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
-
-    - name: Set up Terraform
-      uses: hashicorp/setup-terraform@v1
-      with:
-        terraform_version: 1.0.0 # Specify the Terraform version
-
+      uses: actions/checkout@v4
     - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v1
+      uses: aws-actions/configure-aws-credentials@v4
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: us-west-2 # Change to your AWS region
-
-    - name: Terraform Init
-      run: terraform init
+        aws-region: us-west-2 
 
     - name: Terraform Plan
       uses: dflook/terraform-plan@v1
       with:
         path: terraform
-
-
