@@ -15,7 +15,7 @@ module "iam_services_admin_group" {
 
   group_name = "iam-services-admin-group"
   policy_arn = {
-    "IAMServicesAdmin" = module.aws_custom_policies.policy_arns["IAMServicesAdmin"]
+    "IAMServicesAdmin" = module.aws_custom_policies.policy_arns["IAMServicesSupervisor"]
   }
 }
 

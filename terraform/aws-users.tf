@@ -85,3 +85,25 @@ module "iam_user_awlFCCamp" {
   }
   user_groups = ["read-only-group"]
 }
+
+module "iam_user_testiamuser" {
+  source = "./modules/aws-users"
+
+  user_name = "testiamuser"
+  user_tags = {
+    "Project"      = "devops-security"
+    "Access Level" = "1"
+  }
+  user_groups = ["read-only-group"]
+}
+
+module "iam_user_chelseyb" {
+  source = "./modules/aws-users"
+
+  user_name = "chelseyb"
+  user_tags = {
+    "Project"      = "devops-security"
+    "Access Level" = "1"
+  }
+  user_groups = ["read-only-group", "iam-services-admin-group"]
+}
