@@ -10,12 +10,12 @@ module "iam_read_only_group" {
 }
 
 // Create iam services admin group
-module "iam_services_admin_group" {
+module "iam_services_supervisor_group" {
   source = "./modules/aws-groups"
 
   group_name = "iam-services-admin-group"
   policy_arn = {
-    "IAMServicesAdmin" = module.aws_custom_policies.policy_arns["IAMServicesSupervisor"]
+    "IAMServicesSupervisor" = module.aws_custom_policies.policy_arns["IAMServicesSupervisor"]
   }
 }
 
