@@ -1,0 +1,38 @@
+{
+    "Statement": [
+        {
+            "Action": [
+                "iam:CreateAccessKey"
+            ],
+            "Effect": "Allow",
+            "Resource": "arn:aws:iam::*:user/*"
+        },
+        {
+            "Action": [
+                "iam:UpdateLoginProfile"
+            ],
+            "Condition": {
+                "StringEquals": {
+                    "iam:ResourceTag/Access Level": [
+                        "1",
+                        "2"
+                    ]
+                }
+            },
+            "Effect": "Allow",
+            "Resource": "arn:aws:iam::*:user/*"
+        },
+        {
+            "Action": [
+                "cloudshell:CreateEnvironment",
+                "cloudshell:GetEnvironmentStatus",
+                "cloudshell:CreateSession",
+                "cloudshell:StartEnvironment",
+                "cloudshell:StopEnvironment"
+            ],
+            "Effect": "Allow",
+            "Resource": "*"
+        }
+    ],
+    "Version": "2012-10-17"
+}
