@@ -13,7 +13,7 @@ module "iam_read_only_group" {
 module "iam_services_supervisor_group" {
   source = "./modules/aws-groups"
 
-  group_name = "iam-services-admin-group"
+  group_name = "iam-services-supervisor-group"
   policy_arn = {
     "IAMServicesSupervisor" = module.aws_custom_policies.policy_arns["IAMServicesSupervisor"]
   }
