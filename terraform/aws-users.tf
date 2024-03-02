@@ -105,5 +105,5 @@ module "iam_user_chelseyb" {
     "Project"      = "devops-security"
     "Access Level" = "1"
   }
-  user_groups = ["read-only-group", "iam-services-admin-group"]
+  user_groups = ["read-only-group", "iam-services-supervisor-group"]
 }
