@@ -15,6 +15,13 @@ Below are guidelines for contributing to the devops-security repository hosted o
 - [**Table of Contents**](#table-of-contents)
 - [**Setting up the local development environment**](#setting-up-the-local-development-environment)
     - [**Creating a personal AWS account**](#creating-a-personal-aws-account)
+    - [**Login as root user & setup MFA**](#login-as-root-user-&-setup-mfa)
+    - [**Setting up IAM and AWS CLI**](#setting-up-iam-and-aws-cli)
+        - [**Create an IAM User**](#create-an-iam-user)
+        - [**Create an IAM Group**](#create-an-iam-group)
+        - [**Attach IAM user to IAM group**](#attach-iam-user-to-iam-group)
+        - [**Attach `AdministratorAccess` policy to IAM group**](#attach-administratoraccess-policy-to-iam-group)
+        - [**Generating Access Keys for AWS CLI**](#generating-access-keys-for-aws-cli)
     - [**Installing Terraform**](#installing-terraform)
     - [**Installing Terraform docs**](#installing-terraform-docs)
     - [**Fork the repository**](#fork-the-repository)
@@ -33,6 +40,98 @@ Below are guidelines for contributing to the devops-security repository hosted o
 - Enter your credit/debit card information for billing purposes, opt for the free basic support.
 - Agree to the AWS Customer Agreement and Service Terms, complete the registration by clicking `"Create Account and Continue"`, verify your phone number via text or call, confirm your email address following the instructions in the confirmation email, and finally sign in to access your new AWS account using your email and password.
 - Follow this [video guide](https://youtu.be/CjKhQoYeR4Q?si=78GhlDLV5zZu8qwh) for deeper explanations.
+
+<sub>[Back to Table of Contents](#table-of-contents)</sub>
+***
+
+### **Login as root user & setup MFA**
+- Open [AWS Management Console](https://console.aws.amazon.com/).
+- Choose `Root user` and enter your email.
+- Complete security check if prompted.
+- Enter password and authenticate with MFA.
+- Sign in to access the Console Home page.
+- Follow this [guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/enable-virt-mfa-for-root.html) for enabling MFA for the root AWS account.
+
+**Note:** Select the `us-west-2` region. It's not required for managing IAM resources, as they are global. However, it's advisable since our other resources are in the same region.
+
+<sub>[Back to Table of Contents](#table-of-contents)</sub>
+***
+
+## **Setting up IAM and AWS CLI**
+
+- Open AWS CloudShell or follow this [link](https://docs.aws.amazon.com/cloudshell/latest/userguide/welcome.html#how-to-get-started)
+- ### **Create an IAM User**
+
+  Run the following commands
+  ```bash
+  aws iam create-user --user-name UserName
+  ```
+  For example if your AWS username was `octocat`:
+
+  ```bash
+  aws iam create-user --user-name octocat
+  ```
+  then create a login profile with username and password with
+
+  ```bash
+  aws iam create-login-profile --user-name UserName --password ExamplePassword123!
+  ```
+  For example if your AWS username was `octocat`:
+
+  ```bash
+  aws iam create-login-profile --user-name octocat --password OctocatIsMyPassword234!
+  ```
+  **Note:** Password length must be 20 characters
+
+  <sub>[Back to Table of Contents](#table-of-contents)</sub>
+  ***
+- ### **Create an IAM Group**
+
+  To create an `AdminGroup` run the command
+
+  ```bash
+  aws iam create-group --group-name AdminGroup
+  ```
+  <sub>[Back to Table of Contents](#table-of-contents)</sub>
+  ***
+- ### **Attach IAM user to IAM group**
+  
+  Next we need to link the newly created IAM user with the IAM group, use the command
+
+  ```bash
+  aws iam add-user-to-group --group-name AdminGroup --user-name UserName
+  ```
+  For example if your AWS username was `octocat`:
+
+  ```bash
+  aws iam add-user-to-group --group-name AdminGroup --user-name octocat
+  ```
+  <sub>[Back to Table of Contents](#table-of-contents)</sub>
+  ***
+- ### **Attach `AdministratorAccess` policy to IAM group**
+
+  Run the command for attaching `AdministratorAccess` policy to the `AdminGroup` 
+
+  ```bash
+  aws iam attach-group-policy --policy-arn arn:aws:iam::aws:policy/AdministratorAccess --group-name AdminGroup
+  ```
+  <sub>[Back to Table of Contents](#table-of-contents)</sub>
+  ***
+- Log in as the newly created user instead of continuing to log in as the root user.
+- ### **Generating Access Keys for AWS CLI**
+  - Open CloudShell
+  - Generate the Access Keys for AWS CLI
+    ```bash
+    aws iam create-access-key --user-name UserName > access_key.json
+    ```
+  - Print the contents of `access_key.json` and copy the contents to a secure location (you'll need the keys when you set up AWS CLI below)
+    ```bash
+    nano access_key.json
+    ```
+  <sub>[Back to Table of Contents](#table-of-contents)</sub>
+  ***
+- [Install AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) 
+- [Set up the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-quickstart.html)
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
