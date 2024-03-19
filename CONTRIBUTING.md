@@ -23,6 +23,7 @@ Below are guidelines for contributing to the devops-security repository hosted o
         - [**Attach `AdministratorAccess` policy to IAM group**](#attach-administratoraccess-policy-to-iam-group)
         - [**Generating Access Keys for AWS CLI**](#generating-access-keys-for-aws-cli)
     - [**Installing Terraform**](#installing-terraform)
+    - [**Creating Backend State**](#creating-backend-state)
     - [**Installing Terraform docs**](#installing-terraform-docs)
     - [**Fork the repository**](#fork-the-repository)
     - [**Clone (Create) a copy on your computer**](#clone-create-a-copy-on-your-computer)
@@ -30,6 +31,9 @@ Below are guidelines for contributing to the devops-security repository hosted o
         - [**What if you accidentally cloned using the repository URL from the HackForLA Github (instead of the fork on your Github)?**](#what-if-you-accidentally-cloned-using-the-repository-url-from-the-hackforla-github-instead-of-the-fork-on-your-github)
             - [**i. Reset `origin` remote url**](#i-reset-origin-remote-url)
             - [**ii. Add an `upstream` remote**](#ii-add-an-upstream-remote)
+    - [**Create a new branch where you will work on your issue**](#create-a-new-branch-where-you-will-work-on-your-issue)
+    - [**Terraform Setup and Execution Instructions**](#terraform-setup-and-execution-instructions)
+    - [**Submitting changes via git and opening a PR**](#submitting-changes-via-git-and-opening-a-pr)
 
 ## **Setting up the local development environment**
 
@@ -121,10 +125,12 @@ Below are guidelines for contributing to the devops-security repository hosted o
 - ### **Generating Access Keys for AWS CLI**
   - Open CloudShell
   - Generate the Access Keys for AWS CLI
+
     ```bash
     aws iam create-access-key --user-name UserName > access_key.json
     ```
   - Print the contents of `access_key.json` and copy the contents to a secure location (you'll need the keys when you set up AWS CLI below)
+   
     ```bash
     nano access_key.json
     ```
@@ -139,6 +145,15 @@ Below are guidelines for contributing to the devops-security repository hosted o
 ### **Installing Terraform**
 
 Use the [Official HashiCorp install instructions](https://developer.hashicorp.com/terraform/install) for installing terraform.
+
+<sub>[Back to Table of Contents](#table-of-contents)</sub>
+***
+
+### **Creating Backend State**
+
+To facilitate AWS IAM changes using Terraform, it's essential to establish backend state storage. Refer to and follow the instructions outlined in this [issue](https://github.com/hackforla/ops/issues/105) to create the backend state.
+
+**Note:** Users will need to create their backend state exactly as specified (i.e. using the same naming conventions).
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
@@ -243,6 +258,73 @@ Add another remote called `upstream` that points to the `hackforla` version of t
 ```bash
 git remote add upstream https://github.com/hackforla/devops-security.git
 ```
+
+<sub>[Back to Table of Contents](#table-of-contents)</sub>
+***
+
+### **Create a new branch where you will work on your issue**
+ 
+Using the `-b` flag you can also use the `git checkout` command to create a new branch and immediately switch into it.  
+
+For example, if you create a new issue branch for [Update Contributing document to include next steps - #15](https://github.com/hackforla/devops-security/issues/15):
+
+```bash
+git checkout -b update-contributing-guide-15
+```
+
+ The text after the `-b`, in the example `update-contributing-guide-15`, will be the name of your new branch.
+
+ **Note:** Choose a branch name that:
+ * relates to the issue (No spaces!)
+ * includes the issue number
+
+**Note:** The format should look like the scheme above where the words are a brief description of the issue that will make sense at a glance to someone unfamiliar with the issue.
+
+**Note:** No law of physics will break if you don't adhere to this scheme, but laws of git will break if you add spaces.
+
+When you've finished working on your issue, follow the steps below to prepare your changes to push to your repository.
+
+<sub>[Back to Table of Contents](#table-of-contents)</sub>
+***
+
+### **Terraform Setup and Execution Instructions**
+
+- Change into `terraform` directory with 
+
+```bash
+cd terraform
+```
+
+- Next initilize the terraform configuration
+
+```bash
+terraform init
+```
+
+- Then generate and run an execution plan
+
+```bash
+terraform plan
+```
+<sub>[Back to Table of Contents](#table-of-contents)</sub>
+***
+
+### **Submitting changes via git and opening a PR**
+
+- We urge developers to be cautious using `git add`. In general it is not advisable to use `git add -all` or `git add .`. Rather, run `git status`, examine the output carefully, and then add only those files specifically related to the current issue. This will ensure that no extraneous files are included in the subsequent commit. 
+
+- Then commit the changes with a descriptive message using
+
+  ```bash
+  git commit -m "your commit message"
+  ```
+
+- Push changes to the remote repository, replace the `branch_name` with the name of the branch you are working on
+
+  ```bash
+  git push --set-upstream origin main branch_name
+  ```
+- Lastly open a PR to merge your changes into the `main` branch.
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
