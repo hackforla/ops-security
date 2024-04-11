@@ -39,7 +39,7 @@ Below are guidelines for contributing to the devops-security repository hosted o
 
 ### **Creating a personal AWS account**
 
-- Go to [amazon.com](https://aws.amazon.com/) and click `"Sign In to the Console" > "Create a new AWS account."` 
+- Go to [AWS](https://aws.amazon.com/) and click `"Sign In to the Console" > "Create a new AWS account."` 
 - Enter your email, create a password, and input your basic details. Then provide your contact information and complete the identity verification process.
 - Enter your credit/debit card information for billing purposes, opt for the free basic support.
 - Agree to the AWS Customer Agreement and Service Terms, complete the registration by clicking `"Create Account and Continue"`, verify your phone number via text or call, confirm your email address following the instructions in the confirmation email, and finally sign in to access your new AWS account using your email and password.
