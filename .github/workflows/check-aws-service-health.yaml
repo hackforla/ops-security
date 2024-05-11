@@ -1,0 +1,19 @@
+name: Check AWS Service Health
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check-service-health:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-west-2  # Change to your AWS region
+
+    - name: Check Service Health
+      run: |
+        aws health describe-events --filter eventStatusCodes=upcoming,open --region us-west-2
