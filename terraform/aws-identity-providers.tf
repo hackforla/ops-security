@@ -39,6 +39,11 @@ resource "aws_iam_openid_connect_provider" "github_actions" {
 resource "aws_iam_role" "github_actions_oidc" {
   name = "${local.naming_prefix}-deployer"
 
+  managed_policy_arns = [
+    # TODO: replace admin with the correct scopes, once known
+    "arn:aws:iam::aws:policy/AdministratorAccess"
+  ]
+
   assume_role_policy = jsonencode({
     "Version" : "2012-10-17",
     "Statement" : [
