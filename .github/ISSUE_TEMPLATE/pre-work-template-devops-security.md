@@ -26,17 +26,17 @@ As a new member on the HfLA devops-security team, fill in the following fields a
 - [ ] Attend weekly team meeting, Wednesdays 6-8pm PST.
   - [ ] Note: There are no meetings on the 1st-7th of every month.
 - [ ] Complete the steps in [Creating a personal AWS account](https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#creating-a-personal-aws-account) and [Login as root user & setup MFA](https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#login-as-root-user-&-setup-mfa).
-- [ ] Read and follow the instructions in [Setting up IAM and AWS CLI](https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#setting-up-iam-and-aws-cli) for :-
-      - [ ] [Creating an IAM User](https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#create-an-iam-group)
-      - [ ] [Creating an IAM Group] (https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#create-an-iam-group)
-      - [ ] [Attaching IAM user to IAM Group] (https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#attach-iam-user-to-iam-group)
-      - [ ] [Providing `AdministratorAccess` policy to IAM group] (https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#attach-administratoraccess-policy-to-iam-group)
-      - [ ] Log in as the newly created user instead of continuing to log in as the root user (it is not recommended to login with root access).
-      - [ ] [Generating user access keys] (https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#generating-access-keys-for-aws-cli)
-- [ ] Complete the instructions in [AWS Documentation] (https://docs.aws.amazon.com/cli/v1/userguide/cli-chap-install.html) and choose your operating system to install AWS CLI. 
+- [ ] Read and follow the instructions in [Setting up IAM and AWS CLI](https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#setting-up-iam-and-aws-cli) for:
+    - [ ] [Creating an IAM User](https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#create-an-iam-group)
+    - [ ] [Creating an IAM Group](https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#create-an-iam-group)
+    - [ ] [Attaching IAM user to IAM Group] (https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#attach-iam-user-to-iam-group)
+    - [ ] [Providing `AdministratorAccess` policy to IAM group](https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#attach-administratoraccess-policy-to-iam-group)
+    - [ ] Log in as the newly created user instead of continuing to log in as the root user (it is not recommended to login with root access).
+    - [ ] [Generating user access keys](https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#generating-access-keys-for-aws-cli)
+- [ ] Complete the instructions in [AWS Documentation](https://docs.aws.amazon.com/cli/v1/userguide/cli-chap-install.html) and choose your operating system to install AWS CLI. 
 - [ ] Complete the instruction in [AWS Documentation](https://docs.aws.amazon.com/cli/latest/userguide/cli-authentication-short-term.html) to setup the AWS CLI.
 - [ ] Read follow the instructions in [Creating a backend state](https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#creating-backend-state).
-- [ ] Install Terraform locally by following the instructions of the installation guide mentioned in [Installing Terraform] (https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#installing-terraform)
+- [ ] Install Terraform locally by following the instructions of the installation guide mentioned in [Installing Terraform](https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#installing-terraform)
 - [ ] Install Terraform Docs locally by following the instructions of the installation guide mentiond in [Installing Terrafrom docs](https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#installing-terraform-docs)
 - [ ] Complete the instructions in [Fork the repository](https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#fork-the-repository) and [Clone (Create) a copy on your computer](https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#clone-create-a-copy-on-your-computer)
 - [ ] In your code editor navigate to `terraform` directory.
