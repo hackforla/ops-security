@@ -29,7 +29,7 @@ As a new member on the HfLA devops-security team, fill in the following fields a
 - [ ] Read and follow the instructions in [Setting up IAM and AWS CLI](https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#setting-up-iam-and-aws-cli) for:
     - [ ] [Creating an IAM User](https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#create-an-iam-group)
     - [ ] [Creating an IAM Group](https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#create-an-iam-group)
-    - [ ] [Attaching IAM user to IAM Group] (https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#attach-iam-user-to-iam-group)
+    - [ ] [Attaching IAM user to IAM Group](https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#attach-iam-user-to-iam-group)
     - [ ] [Providing `AdministratorAccess` policy to IAM group](https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#attach-administratoraccess-policy-to-iam-group)
     - [ ] Log in as the newly created user instead of continuing to log in as the root user (it is not recommended to login with root access).
     - [ ] [Generating user access keys](https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#generating-access-keys-for-aws-cli)
