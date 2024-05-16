@@ -9,6 +9,17 @@ module "iam_user_JimmyJuarez10" {
   user_groups = ["read-only-group"]
 }
 
+module "iam_user_tylerthome" {
+  source = "./modules/aws-users"
+
+  user_name = "tyler.thome"
+  user_tags = {
+    "Project"      = "home-unite-us"
+    "Access Level" = "1"
+  }
+  user_groups = ["read-only-group"]
+}
+
 module "iam_user_brittanyms" {
   source = "./modules/aws-users"
 
