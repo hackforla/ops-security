@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main  # or any other branch you want to trigger the deployment
+    paths: 
+      - '**/*.tf'
 
 jobs:
   terraform-apply:
