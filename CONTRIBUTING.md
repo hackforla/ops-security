@@ -25,12 +25,7 @@ Below are guidelines for contributing to the devops-security repository hosted o
     - [**Installing Terraform**](#installing-terraform)
     - [**Creating Backend State**](#creating-backend-state)
     - [**Installing Terraform docs**](#installing-terraform-docs)
-    - [**Fork the repository**](#fork-the-repository)
     - [**Clone (Create) a copy on your computer**](#clone-create-a-copy-on-your-computer)
-        - [**Verify `origin` remote url**](#verify-origin-remote-url)
-        - [**What if you accidentally cloned using the repository URL from the HackForLA Github (instead of the fork on your Github)?**](#what-if-you-accidentally-cloned-using-the-repository-url-from-the-hackforla-github-instead-of-the-fork-on-your-github)
-            - [**i. Reset `origin` remote url**](#i-reset-origin-remote-url)
-            - [**ii. Add an `upstream` remote**](#ii-add-an-upstream-remote)
     - [**Create a new branch where you will work on your issue**](#create-a-new-branch-where-you-will-work-on-your-issue)
     - [**Terraform Setup and Execution Instructions**](#terraform-setup-and-execution-instructions)
     - [**Submitting changes via git and opening a PR**](#submitting-changes-via-git-and-opening-a-pr)
@@ -165,29 +160,7 @@ Follow the Terraform docs [installation guide](https://terraform-docs.io/user-gu
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
 
-## **Fork the repository**
-
-Fork the hackforla/devops-security repository by clicking <a href="https://github.com/hackforla/devops-security/fork"> <button> <img src="https://user-images.githubusercontent.com/17777237/54873012-40fa5b00-4dd6-11e9-98e0-cc436426c720.png" width="8px"> Fork</button></a>
-. A fork is a copy of the repository that will be placed on your GitHub account.
-
-<details>
-  <summary><strong>Click here</strong> to see a visual example of the `fork` button within the devops-security repo</summary>
-  <p><strong>First, you find the `fork` button on the top right hand side of the [Hack for LA devops-security repo](https://github.com/hackforla/devops-security)</strong></h4>
-<img src="https://github.com/freaky4wrld/devops-security/assets/134206855/ff3bbadb-5798-4f37-ad3f-b9f699595381" />
-  <p><strong>Next, a modal may open and request where you want to fork this devops-security repo. Please click on your avatar or your GitHub username</strong></p>
-<img src="https://github.com/freaky4wrld/devops-security/assets/134206855/db7a0ca9-3dee-429e-a5eb-115248a52884" />
-</details><br>
-
-**Note:** It should create a URL that looks like the following -> `https://github.com/<your_GitHub_user_name>/devops-security`.
-
-**For example** -> `https://github.com/octocat/devops-security`.
-
-**Be Aware:** What you have created is a forked copy in a remote version on GitHub. It is not yet on your local machine.
-
-<sub>[Back to Table of Contents](#table-of-contents)</sub>
-***
-
-## **Clone (Create) a copy on your computer**
+## **Clone the repository**
 
 Create a new folder in your computer that will contain `hackforla` projects.
 
@@ -202,61 +175,13 @@ cd hackforla
 and run the following commands:
 
 ```bash
-git clone https://github.com/<your_GitHub_user_name>/devops-security.git
-```
-
-For example if your GitHub username was `octocat`:
-```bash
-git clone https://github.com/octocat/devops-security.git
+git clone https://github.com/hackforla/devops-security.git
 ```
 
 You should now have a new folder in your `hackforla` folder called `devops-security`. Verify this by changing into the new directory:
 
 ```bash
 cd devops-security
-```
-
-#### **Verify `origin` remote url**
-
-Verify that your local cloned repository is pointing to the correct `origin` URL (that is, the forked repo on your own Github account):
-```bash
-git remote -v
-```
-You should see `fetch` and `push` URLs with links to your forked repository under your account (i.e. `https://github.com/<your_GitHub_user_name>/devops-security.git`). You are all set to make working changes to the devops-security on your local machine.
-
-However, we still need a way to keep our local repo up to date with the deployed devops-security. To do so, you must add an upstream remote to incorporate changes made while you are working on your local repo. Run the following to add an upstream remote URL & update your local repo with recent changes to the `hackforla` version:
-
-```bash
-git remote add upstream https://github.com/hackforla/devops-security.git
-git fetch upstream
-```
-
-After adding the upstream remote, you should now see it if you again run `git remote -v` :
-```bash
-origin  https://github.com/<your_GitHub_user_name>/devops-security.git (fetch)
-origin  https://github.com/<your_GitHub_user_name>/devops-security.git (push)
-upstream        https://github.com/hackforla/devops-security.git (fetch)
-upstream        https://github.com/hackforla/devops-security.git (push)
-```
-#### **What if you accidentally cloned using the repository URL from the HackForLA Github (instead of the fork on your Github)?**
-
-##### **i. Reset `origin` remote url**
-
-Set your forked repo on your Github as an `origin` remote:
-```bash
-git remote set-url origin https://github.com/<your_GitHub_user_name>/devops-security.git
-```
-
-For example if your GitHub username was `octocat`:
-```bash
-git remote set-url origin https://github.com/octocat/devops-security.git
-```
-
-##### **ii. Add an `upstream` remote**
-
-Add another remote called `upstream` that points to the `hackforla` version of the repository. This will allow you to incorporate changes later:
-```bash
-git remote add upstream https://github.com/hackforla/devops-security.git
 ```
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
@@ -322,7 +247,7 @@ terraform plan
 - Push changes to the remote repository, replace the `branch_name` with the name of the branch you are working on
 
   ```bash
-  git push --set-upstream origin main branch_name
+  git push --set-upstream origin branch_name
   ```
 - Lastly open a PR to merge your changes into the `main` branch.
 

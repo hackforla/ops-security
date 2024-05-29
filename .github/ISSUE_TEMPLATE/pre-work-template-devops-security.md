@@ -37,12 +37,8 @@ As a new member on the HfLA devops-security team, fill in the following fields a
 - [ ] Complete the instruction in [AWS Documentation](https://docs.aws.amazon.com/cli/latest/userguide/cli-authentication-short-term.html) to setup the AWS CLI.
 - [ ] Read follow the instructions in [Creating a backend state](https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#creating-backend-state).
 - [ ] Install Terraform locally by following the instructions of the installation guide mentioned in [Installing Terraform](https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#installing-terraform)
-- [ ] Install Terraform Docs locally by following the instructions of the installation guide mentiond in [Installing Terrafrom docs](https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#installing-terraform-docs)
-- [ ] Complete the instructions in [Fork the repository](https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#fork-the-repository) and [Clone (Create) a copy on your computer](https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#clone-create-a-copy-on-your-computer)
-- [ ] In your code editor navigate to `terraform` directory.
-- [ ] Execute the command `terraform plan` this will output a plan replicating the same IAM resources as the devops security account.
-- [ ] Then execute the command `terraform apply` this will create all of the resources that are currently managed by Devops Security. All of the resources created here incur zero cost except for the Dynamo DB installation, which should remain in the free tier.
-      - [ ] ** If you have cost concerns, Run a Terraform Destroy to take down all of the resources you created (don't worry, you can recreate them just as quickly). **
+- [ ] Install Terraform Docs locally by following the instructions of the installation guide mentioned in [Installing Terraform docs](https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#installing-terraform-docs)
+- [ ] Complete the instructions in [Clone the repository](https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#clone-the-repository)
 - [ ] Submit a [new request](https://github.com/hackforla/devops-security/issues/new?assignees=&labels=enhancement&projects=&template=request-aws-iam-resources.yml) to create new AWS user account and then self-assign this issue.
 - [ ] Create a new branch from main by executing the command
 
@@ -66,9 +62,13 @@ As a new member on the HfLA devops-security team, fill in the following fields a
     }
 
     ```
-- [ ] Stage changes in git with 
+- [ ] In your code editor navigate to `terraform` directory. `cd terraform`
+- [ ] Execute the command `terraform init` to initialize terraform in the directory. Address any failures that arise (if any).
+- [ ] Execute the command `terraform plan` this will output a plan replicating the same IAM resources as the devops security account. Address any failures that arise (if any).
+- [ ] Then execute the command `terraform apply` this will create all of the resources that are currently managed by Devops Security. All of the resources created here incur zero cost except for the Dynamo DB installation, which should remain in the free tier.
+      - [ ] ** If you have cost concerns, Run a Terraform Destroy to take down all of the resources you created (don't worry, you can recreate them just as quickly). **
+- [ ] Once you have tested your changes, stage them in git with 
     - [ ] `git status` command.
     - [ ] then `git add path/to/file` (you can copy from above output for the file path).
 - [ ] Commit the changes by executing `git commit -m "briefly describing the changes"`.
 - [ ] Push the changes with `git push --set-upstream origin name-of-branch`
-
