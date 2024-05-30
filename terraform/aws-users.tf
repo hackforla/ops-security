@@ -118,3 +118,25 @@ module "iam_user_chelseyb" {
   }
   user_groups = ["read-only-group", "iam-services-supervisor-group"]
 }
+
+module "iam_user_jbubar" {
+  source = "./modules/aws-users"
+
+  user_name = "jbubar"
+  user_tags = {
+    "Project"      = "vrms"
+    "Access Level" = "1"
+  }
+  user_groups = ["read-only-group"]
+}
+
+module "iam_user_spiteless" {
+  source = "./modules/aws-users"
+
+  user_name = "spiteless"
+  user_tags = {
+    "Project"      = "vrms"
+    "Access Level" = "1"
+  }
+  user_groups = ["read-only-group"]
+}
