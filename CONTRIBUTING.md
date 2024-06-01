@@ -188,6 +188,7 @@ cd devops-security
 ***
 
 ### **Create a new branch where you will work on your issue**
+Ensure you're on the main branch `git checkout main` and that your main branch is up to date `git pull`
  
 Using the `-b` flag you can also use the `git checkout` command to create a new branch and immediately switch into it.  
 
