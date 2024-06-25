@@ -31,3 +31,5 @@ To automatically update this documentation, install terraform-docs on your local
 `cd <directory of README location to update>`
 `terraform-docs -c .terraform.docs.yml .`
 <!-- END_TF_DOCS -->    
+
+Much of this content was generated using ChatGPT-4; reviewed and edited by humans
