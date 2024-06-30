@@ -166,7 +166,7 @@ dynamodb_table = "{developer_specific}_hfla_ops_terraform_table"
 encrypt        = true
 ```
 
-Remeber to match these values to the ones in your backend state
+Remeber to match these values to the ones in your backend state (and replace {developer-specific} with your actual name)
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
