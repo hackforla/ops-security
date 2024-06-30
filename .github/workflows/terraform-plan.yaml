@@ -32,3 +32,4 @@ jobs:
       uses: dflook/terraform-plan@v1
       with:
         path: terraform
+        backend_config_file: prod.backend.tfvars

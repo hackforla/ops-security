@@ -242,7 +242,7 @@ cd terraform
 - Next initilize the terraform configuration
 
 ```bash
-terraform init
+terraform init --backend-config=backend.tfvars
 ```
 
 - Then generate and run an execution plan
