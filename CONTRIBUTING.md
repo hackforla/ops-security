@@ -24,7 +24,6 @@ Below are guidelines for contributing to the devops-security repository hosted o
         - [**Generating Access Keys for AWS CLI**](#generating-access-keys-for-aws-cli)
     - [**Installing Terraform**](#installing-terraform)
     - [**Creating Backend State**](#creating-backend-state)
-    - [**Creating Local tfvars file**](#creating-local-tfvars-file)
     - [**Installing Terraform docs**](#installing-terraform-docs)
     - [**Clone (Create) a copy on your computer**](#clone-create-a-copy-on-your-computer)
     - [**Create a new branch where you will work on your issue**](#create-a-new-branch-where-you-will-work-on-your-issue)
@@ -150,22 +149,6 @@ Use the [Official HashiCorp install instructions](https://developer.hashicorp.co
 To facilitate AWS IAM changes using Terraform, it's essential to establish backend state storage. Refer to and follow the instructions outlined in this [issue](https://github.com/hackforla/ops/issues/105) to create the backend state.
 
 **Note:** Users will need to create their backend state exactly as specified (i.e. using the same naming conventions).
-
-<sub>[Back to Table of Contents](#table-of-contents)</sub>
-***
-
-### **Creating Local tfvars file**
-
-Atfer creating a backend state, create a ```backend.tfvars``` file. It should have content of this format:
-
-```bucket         = "{developer_specific}-hfla-ops-terraform-state"
-key            = "devops-security/terraform.tfstate"
-region         = "us-east-2"
-dynamodb_table = "{developer_specific}_hfla_ops_terraform_table"
-encrypt        = true
-```
-
-Remeber to match these values to the ones in your backend state
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
