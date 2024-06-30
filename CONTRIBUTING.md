@@ -158,7 +158,8 @@ To facilitate AWS IAM changes using Terraform, it's essential to establish backe
 
 Atfer creating a backend state, create a ```backend.tfvars``` file. It should have content of this format:
 
-```bucket         = "{developer_specific}-hfla-ops-terraform-state"
+```
+bucket         = "{developer_specific}-hfla-ops-terraform-state"
 key            = "devops-security/terraform.tfstate"
 region         = "us-east-2"
 dynamodb_table = "{developer_specific}_hfla_ops_terraform_table"
