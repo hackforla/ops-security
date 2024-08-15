@@ -151,3 +151,14 @@ module "iam_user_alexe" {
   }
   user_groups = ["read-only-group"]
 }
+
+module "iam_user_rsakuma"{
+  source = "./modules/aws-users"
+
+  user_name = "rsakuma"
+  user_tags = {
+    "Project"	="devops-security"
+    "Access Level" = "1"
+  }
+  user_groups = ["read-only-group"]
+}
