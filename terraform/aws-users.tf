@@ -141,13 +141,24 @@ module "iam_user_spiteless" {
   user_groups = ["read-only-group"]
 }
 
-module "iam_user_rsakuma"{
-source = "./modules/aws-users"
+module "iam_user_alexe" {
+  source = "./modules/aws-users"
 
-user_name = "rsakuma"
-user_tags = {
-  "Project"	="devops-security"
-  "Access Level" = "1"
+  user_name = "alexe"
+  user_tags = {
+    "Project"      = "devops-security"
+    "Access Level" = "1"
+  }
+  user_groups = ["read-only-group"]
 }
-user_groups = ["read-only-group"]
+
+module "iam_user_rsakuma"{
+  source = "./modules/aws-users"
+
+  user_name = "rsakuma"
+  user_tags = {
+    "Project"	="devops-security"
+    "Access Level" = "1"
+  }
+  user_groups = ["read-only-group"]
 }
