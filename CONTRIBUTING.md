@@ -32,7 +32,7 @@ Below are guidelines for contributing to the devops-security repository hosted o
     - [**Submitting changes via git and opening a PR**](#submitting-changes-via-git-and-opening-a-pr)
 
 ## **Setting up the local development environment**
-
+The below instructions will walk you through setting up your own AWS account for local development and testing before pushing changes that will effect our infrastructure. If you've already completed these steps, skip to [Create a branch](https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#create-a-new-branch-where-you-will-work-on-your-issue)
 ### **Creating a personal AWS account**
 
 - Go to [AWS](https://aws.amazon.com/) and click `"Sign In to the Console" > "Create a new AWS account."` 
@@ -132,24 +132,59 @@ Below are guidelines for contributing to the devops-security repository hosted o
     ```
   <sub>[Back to Table of Contents](#table-of-contents)</sub>
   ***
+The below steps must be completed in order to authenticate to AWS locally via the command line interface (CLI):
 - [Install AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) 
 - [Set up the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-quickstart.html)
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
 
-### **Installing Terraform**
-
-Use the [Official HashiCorp install instructions](https://developer.hashicorp.com/terraform/install) for installing terraform.
-
-<sub>[Back to Table of Contents](#table-of-contents)</sub>
-***
-
 ### **Creating Backend State**
 
-To facilitate AWS IAM changes using Terraform, it's essential to establish backend state storage. Refer to and follow the instructions outlined in this [issue](https://github.com/hackforla/ops/issues/105) to create the backend state.
+To facilitate AWS IAM changes using Terraform, it's essential to establish backend state storage.
 
-**Note:** Users will need to create their backend state exactly as specified (i.e. using the same naming conventions).
+#### Create S3 bucket
+- Region: `us-west-2` (Oregon)
+- Name: `USERNAME-hfla-ops-terraform-state`
+- Enable versioning
+- Enable server-side encryption
+
+You can create a bucket from the AWS UI, CloudShell, or from the CLI using the following commands:
+
+##### Step 1: Create the bucket
+`aws s3api create-bucket --bucket USERNAME-hfla-ops-terraform-state --region us-west-2 --create-bucket-configuration LocationConstraint=us-west-2`
+
+##### Step 2: Enable versioning
+`aws s3api put-bucket-versioning --bucket USERNAME-hfla-ops-terraform-state --versioning-configuration Status=Enabled`
+
+##### Step 3: Enable server-side encryption
+```bash
+aws s3api put-bucket-encryption --bucket USERNAME-hfla-ops-terraform-state --server-side-encryption-configuration '{
+    "Rules": [
+        {
+            "ApplyServerSideEncryptionByDefault": {
+                "SSEAlgorithm": "AES256"
+            }
+        }
+    ]
+}'
+```
+
+#### Set up DynamoDB to store the backend state
+
+- Create table `hfla_ops_terraform_table`
+- Set partition key to `LockID` with a type of `string`
+- Choose on-demand capacity
+
+You can create the table from the AWS UI, CloudShell, or from the CLI using the following command:
+
+```bash
+aws dynamodb create-table \
+    --table-name hfla_ops_terraform_table \
+    --attribute-definitions AttributeName=LockID,AttributeType=S \
+    --key-schema AttributeName=LockID,KeyType=HASH \
+    --billing-mode PAY_PER_REQUEST
+```
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
@@ -158,15 +193,22 @@ To facilitate AWS IAM changes using Terraform, it's essential to establish backe
 
 Atfer creating a backend state, create a ```backend.tfvars``` file in the ```terraform``` directory. It should have content of this format:
 
-```
-bucket         = "{developer_specific}-hfla-ops-terraform-state"
+```bash
+bucket         = "USERNAME-hfla-ops-terraform-state"
 key            = "devops-security/terraform.tfstate"
 region         = "us-east-2"
-dynamodb_table = "{developer_specific}_hfla_ops_terraform_table"
+dynamodb_table = "hfla_ops_terraform_table"
 encrypt        = true
 ```
 
-Remeber to match these values to the ones in your backend state (and replace {developer-specific} with your actual name)
+Remember to match these values to the ones in your backend state (and replace USERNAME with your username)
+
+<sub>[Back to Table of Contents](#table-of-contents)</sub>
+***
+
+### **Installing Terraform**
+
+Use the [Official HashiCorp install instructions](https://developer.hashicorp.com/terraform/install) for installing terraform.
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
@@ -232,6 +274,7 @@ When you've finished working on your issue, follow the steps below to prepare yo
 ***
 
 ### **Terraform Setup and Execution Instructions**
+Make the required changes and execute them to see the changes in your own AWS account
 
 - Change into `terraform` directory with 
 
@@ -239,28 +282,55 @@ When you've finished working on your issue, follow the steps below to prepare yo
 cd terraform
 ```
 
-- Next initilize the terraform configuration
+- Initialize the terraform configuration
 
 ```bash
 terraform init --backend-config=backend.tfvars
 ```
 
-- Then generate and run an execution plan
+- Generate and run an execution plan
 
 ```bash
 terraform plan
 ```
+
+- Apply your changes
+```bash
+terraform apply
+```
+
+- Optional: delete the resources created
+```bash
+terraform destroy
+```
+
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
+
+### Generate Terraform Docs
+Terraform docs allow the easy updating of README files inside of Terraform directories
+
+Navigate to the directory where the changes were made
+```bash
+cd terraform # or other directory
+```
+```bash
+terraform-docs -c .terraform.docs.yml .
+```
 
 ### **Submitting changes via git and opening a PR**
 
 - We urge developers to be cautious using `git add`. In general it is not advisable to use `git add -all` or `git add .`. Rather, run `git status`, examine the output carefully, and then add only those files specifically related to the current issue. This will ensure that no extraneous files are included in the subsequent commit. 
 
+Example:
+```bash
+git add terraform/aws-users.tf
+```
+
 - Then commit the changes with a descriptive message using
 
   ```bash
-  git commit -m "your commit message"
+  git commit -m "Updating documentation" # Change the message to summarize the changes you've made
   ```
 
 - Push changes to the remote repository, replace the `branch_name` with the name of the branch you are working on
