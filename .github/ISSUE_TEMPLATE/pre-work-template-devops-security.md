@@ -55,7 +55,7 @@ As a new member on the HfLA devops-security team, fill in the following fields a
     module "iam_user_USERNAME" {
     source = "./modules/aws-users"
 
-    user_name = "USERNAME"
+    user_name = "USERNAME" # Replace with GitHub handle
     user_tags = {
       "Project"      = "devops-security"
       "Access Level" = "1"
