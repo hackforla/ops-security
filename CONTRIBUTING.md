@@ -32,7 +32,10 @@ Below are guidelines for contributing to the devops-security repository hosted o
     - [**Submitting changes via git and opening a PR**](#submitting-changes-via-git-and-opening-a-pr)
 
 ## **Setting up the local development environment**
-The below instructions will walk you through setting up your own AWS account for local development and testing before pushing changes that will effect our infrastructure. If you've already completed these steps, skip to [Create a branch](https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#create-a-new-branch-where-you-will-work-on-your-issue)
+The below instructions will walk you through setting up your own AWS account for local development and testing before pushing changes that will effect our infrastructure. 
+
+If you've already completed these steps or you aren't making Terraform changes, skip to [Create a branch](https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#create-a-new-branch-where-you-will-work-on-your-issue)
+
 ### **Creating a personal AWS account**
 
 - Go to [AWS](https://aws.amazon.com/) and click `"Sign In to the Console" > "Create a new AWS account."` 
@@ -317,6 +320,9 @@ cd terraform # or other directory
 ```bash
 terraform-docs -c .terraform.docs.yml .
 ```
+
+<sub>[Back to Table of Contents](#table-of-contents)</sub>
+***
 
 ### **Submitting changes via git and opening a PR**
 
