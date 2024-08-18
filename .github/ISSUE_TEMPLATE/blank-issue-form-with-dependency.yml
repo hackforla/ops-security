@@ -10,7 +10,7 @@ body:
       value: '- [ ]'
     validations:
       required: true
-  - type: input
+  - type: textarea
     id: overview
     attributes:
       label: Overview
