@@ -162,3 +162,14 @@ module "iam_user_rsakuma"{
   }
   user_groups = ["read-only-group"]
 }
+
+module "iam_user_npang4"{
+  source = "./modules/aws-users"
+
+  user_name = "npang4"
+  user_tags = {
+    "Project"	="devops-security"
+    "Access Level" = "1"
+  }
+  user_groups = ["read-only-group"]
+}
