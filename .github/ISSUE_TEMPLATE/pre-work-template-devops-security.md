@@ -9,7 +9,7 @@ assignees: ''
 ---
 
 ### Prerequisite
-We are looking forward to having you on our team. Please ensure you have prior experience with the HfLA website team before contributing to our repository
+We are looking forward to having you on our team. Please ensure you have prior experience with the HfLA website team before contributing to our repository.
 ### Overview
 As a new member on the HfLA devops-security team, fill in the following fields as you complete each onboarding item.
 
