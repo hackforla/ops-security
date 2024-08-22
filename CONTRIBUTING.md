@@ -196,7 +196,7 @@ aws dynamodb create-table \
 
 Atfer creating a backend state, create a ```backend.tfvars``` file in the ```terraform``` directory. It should have content of this format:
 
-```bash
+```terraform
 bucket         = "USERNAME-hfla-ops-terraform-state"
 key            = "devops-security/terraform.tfstate"
 region         = "us-east-2"
