@@ -194,7 +194,7 @@ aws dynamodb create-table \
 
 ### **Creating Local tfvars file**
 
-Atfer creating a backend state, create a ```backend.tfvars``` file in the ```terraform``` directory. It should have content of this format:
+After creating a backend state, create a `backend.tfvars` file in the `terraform` directory. It should have content of this format:
 
 ```terraform
 bucket         = "USERNAME-hfla-ops-terraform-state"
