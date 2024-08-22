@@ -13,11 +13,13 @@ Resources created by this code repository.
 | <a name="module_iam_services_supervisor_group"></a> [iam\_services\_supervisor\_group](#module\_iam\_services\_supervisor\_group) | ./modules/aws-groups | n/a |
 | <a name="module_iam_user_JimmyJuarez10"></a> [iam\_user\_JimmyJuarez10](#module\_iam\_user\_JimmyJuarez10) | ./modules/aws-users | n/a |
 | <a name="module_iam_user_abbyz123"></a> [iam\_user\_abbyz123](#module\_iam\_user\_abbyz123) | ./modules/aws-users | n/a |
+| <a name="module_iam_user_alexe"></a> [iam\_user\_alexe](#module\_iam\_user\_alexe) | ./modules/aws-users | n/a |
 | <a name="module_iam_user_awlFCCamp"></a> [iam\_user\_awlFCCamp](#module\_iam\_user\_awlFCCamp) | ./modules/aws-users | n/a |
 | <a name="module_iam_user_brittanyms"></a> [iam\_user\_brittanyms](#module\_iam\_user\_brittanyms) | ./modules/aws-users | n/a |
 | <a name="module_iam_user_chelseyb"></a> [iam\_user\_chelseyb](#module\_iam\_user\_chelseyb) | ./modules/aws-users | n/a |
 | <a name="module_iam_user_freaky4wrld"></a> [iam\_user\_freaky4wrld](#module\_iam\_user\_freaky4wrld) | ./modules/aws-users | n/a |
 | <a name="module_iam_user_jbubar"></a> [iam\_user\_jbubar](#module\_iam\_user\_jbubar) | ./modules/aws-users | n/a |
+| <a name="module_iam_user_rsakuma"></a> [iam\_user\_rsakuma](#module\_iam\_user\_rsakuma) | ./modules/aws-users | n/a |
 | <a name="module_iam_user_samuelusc"></a> [iam\_user\_samuelusc](#module\_iam\_user\_samuelusc) | ./modules/aws-users | n/a |
 | <a name="module_iam_user_shikha0428"></a> [iam\_user\_shikha0428](#module\_iam\_user\_shikha0428) | ./modules/aws-users | n/a |
 | <a name="module_iam_user_shinjonathan"></a> [iam\_user\_shinjonathan](#module\_iam\_user\_shinjonathan) | ./modules/aws-users | n/a |
