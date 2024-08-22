@@ -85,5 +85,5 @@ If you are unable to authenticate from your local machine using the CLI, post in
 - [ ] Once you have tested your changes, stage them in git with 
     - [ ] `git status` command.
     - [ ] then `git add path/to/file` (you can copy from above output for the file path).
-- [ ] Commit the changes by executing `git commit -m "briefl description of changes"`.
+- [ ] Commit the changes by executing `git commit -m "brief description of changes"`.
 - [ ] Push the changes with `git push --set-upstream origin name-of-branch`
