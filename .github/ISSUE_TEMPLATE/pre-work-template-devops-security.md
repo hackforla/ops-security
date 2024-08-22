@@ -35,7 +35,7 @@ As a new member on the HfLA devops-security team, fill in the following fields a
     - [ ] [Generating user access keys](https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#generating-access-keys-for-aws-cli)
 - [ ] Complete the instructions in [AWS Documentation](https://docs.aws.amazon.com/cli/v1/userguide/cli-chap-install.html) and choose your operating system to install AWS CLI. 
 - [ ] Complete the instruction in [AWS Documentation](https://docs.aws.amazon.com/cli/latest/userguide/cli-authentication-short-term.html) to setup the AWS CLI.
-- [ ] Follow the instructions in [Creating a backend state](https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#creating-backend-state).
+- [ ] Follow the instructions in [Creating a backend state](https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#creating-backend-state) to create the S3 bucket and DynamoDB table.
   - [ ] Create the S3 bucket
   - [ ] Create the DynamoDB table
 - [ ] Install Terraform locally by following the instructions of the installation guide mentioned in [Installing Terraform](https://github.com/hackforla/devops-security/blob/main/CONTRIBUTING.md#installing-terraform)
