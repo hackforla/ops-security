@@ -39,6 +39,10 @@ locals {
 
 data "aws_caller_identity" "current" {}
 
+data "tls_certificate" "github_actions" {
+  url = "https://${local.oidc_github_idp}"
+}
+
 resource "aws_iam_openid_connect_provider" "github_actions" {
   url = "https://${local.oidc_github_idp}"
 
@@ -46,7 +50,7 @@ resource "aws_iam_openid_connect_provider" "github_actions" {
     local.oidc_aws_audience
   ]
 
-  thumbprint_list = ["1b511abead59c6ce207077c0bf0e0043b1382612"]
+  thumbprint_list = [data.tls_certificate.github_actions.certificates[0].sha1_fingerprint]
 }
 
 resource "aws_iam_role" "github_actions_oidc" {
