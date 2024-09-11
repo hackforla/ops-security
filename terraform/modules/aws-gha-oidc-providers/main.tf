@@ -3,8 +3,8 @@ locals {
   oidc_github_idp   = "token.actions.githubusercontent.com"
 
   # compose the OIDC subject using opinionated set of claims
-  # TODO: discuss alternative with maintainers
-  #   see 'claims_supported' for all possibilities (some of which would require custom GHA):
+  #   for alternatives with maintainers,see 'claims_supported' for
+  #   all possibilities (some of which would require custom GHA):
   #      https://token.actions.githubusercontent.com/.well-known/openid-configuration
   ordered_claim_names = [
     "repo", "environment", "ref"
@@ -15,7 +15,9 @@ locals {
     var.github_repo, var.github_environment, var.github_branch
   ])
 
-  # construct 'sub' claim parts by selecting non-empty arg values, then combine
+  # construct 'sub' claim parts by selecting non-empty arg values, then
+  #    combine; these correspond to the source repo and branch, which
+  #    the GHA token issuer populates when sending requests to AWS
   claims = [
     for claim in local.ordered_claim_names : format(
       "%s:%s",
@@ -24,16 +26,9 @@ locals {
     ) if length(local.claims_with_values[claim]) > 0
   ]
 
-  oidc_gha_sub = join(":", var.allow_pull_request ? concat(
-    local.claims, ["pull_request"]
-    ) : local.claims
-  )
-
-  /*
-    Alternative, which would place more responsibility on user to specify valid OIDC claims:
-     
-      `oidc_expected_claims = join(":", [for k,v in var.claim_patterns : "${k}:${v}"])`
-  */
+  # combine all component parts into a ':' delimited string for the
+  #    AWS policy to use for evaluating incoming request 'sub' claims
+  oidc_gha_sub = join(":", local.claims)
 
 }
 

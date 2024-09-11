@@ -39,18 +39,3 @@ variable "use_wildcard" {
   type        = bool
 }
 
-variable "allow_pull_request" {
-  description = "Authorize the token for pull requests"
-  type        = bool
-  default     = false
-}
-
-/*
-    Alternative, which would place more responsibility on user to specify valid OIDC claims:
-
-      `variable "claim_patterns" {
-        description = "Specifies arbitrary "
-        type = map(string)
-      }`
-  */
-
