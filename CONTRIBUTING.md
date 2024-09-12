@@ -24,10 +24,10 @@ Below are guidelines for contributing to the devops-security repository hosted o
         - [**Generating Access Keys for AWS CLI**](#generating-access-keys-for-aws-cli)
     - [**Installing Terraform**](#installing-terraform)
     - [**Creating Backend State**](#creating-backend-state)
-    - [**Creating Local tfvars file**](#creating-local-tfvars-file)
     - [**Installing Terraform docs**](#installing-terraform-docs)
     - [**Clone (Create) a copy on your computer**](#clone-create-a-copy-on-your-computer)
     - [**Create a new branch where you will work on your issue**](#create-a-new-branch-where-you-will-work-on-your-issue)
+    - [**Creating Local tfvars file**](#creating-local-tfvars-file)
     - [**Terraform Setup and Execution Instructions**](#terraform-setup-and-execution-instructions)
     - [**Submitting changes via git and opening a PR**](#submitting-changes-via-git-and-opening-a-pr)
 
@@ -192,23 +192,6 @@ aws dynamodb create-table \
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
 
-### **Creating Local tfvars file**
-
-After creating a backend state, create a `backend.tfvars` file in the `terraform` directory. It should have content of this format:
-
-```terraform
-bucket         = "USERNAME-hfla-ops-terraform-state"
-key            = "devops-security/terraform.tfstate"
-region         = "us-east-2"
-dynamodb_table = "hfla_ops_terraform_table"
-encrypt        = true
-```
-
-Remember to match these values to the ones in your backend state (and replace USERNAME with your username)
-
-<sub>[Back to Table of Contents](#table-of-contents)</sub>
-***
-
 ### **Installing Terraform**
 
 Use the [Official HashiCorp install instructions](https://developer.hashicorp.com/terraform/install) for installing terraform.
@@ -272,6 +255,23 @@ git checkout -b update-contributing-guide-15
 **Note:** No law of physics will break if you don't adhere to this scheme, but laws of git will break if you add spaces.
 
 When you've finished working on your issue, follow the steps below to prepare your changes to push to your repository.
+
+<sub>[Back to Table of Contents](#table-of-contents)</sub>
+***
+
+### **Creating Local tfvars file**
+
+After creating a backend state, create a `backend.tfvars` file in the `terraform` directory. It should have content of this format:
+
+```terraform
+bucket         = "USERNAME-hfla-ops-terraform-state"
+key            = "devops-security/terraform.tfstate"
+region         = "us-east-2"
+dynamodb_table = "hfla_ops_terraform_table"
+encrypt        = true
+```
+
+Remember to match these values to the ones in your backend state (and replace USERNAME with your username)
 
 <sub>[Back to Table of Contents](#table-of-contents)</sub>
 ***
