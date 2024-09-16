@@ -140,3 +140,15 @@ module "iam_user_spiteless" {
   }
   user_groups = ["read-only-group"]
 }
+
+
+module "iam_user_drakeredwind01" {
+  source = "./modules/aws-users"
+
+  user_name = "drakeredwind01"
+  user_tags = {
+    "Project"      = "devops-security"
+    "Access Level" = "1"
+  }
+  user_groups = ["read-only-group"]
+}
