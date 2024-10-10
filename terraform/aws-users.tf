@@ -182,5 +182,5 @@ module "iam_user_drakeredwind01" {
     "Project"      = "devops-security"
     "Access Level" = "1"
   }
-  user_groups = ["ops-leads"]
+  user_groups = ["read-only-group"]
 }
