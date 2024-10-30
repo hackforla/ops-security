@@ -17,8 +17,11 @@ Resources created by this code repository.
 | <a name="module_iam_user_awlFCCamp"></a> [iam\_user\_awlFCCamp](#module\_iam\_user\_awlFCCamp) | ./modules/aws-users | n/a |
 | <a name="module_iam_user_brittanyms"></a> [iam\_user\_brittanyms](#module\_iam\_user\_brittanyms) | ./modules/aws-users | n/a |
 | <a name="module_iam_user_chelseyb"></a> [iam\_user\_chelseyb](#module\_iam\_user\_chelseyb) | ./modules/aws-users | n/a |
+| <a name="module_iam_user_drakeredwind01"></a> [iam\_user\_drakeredwind01](#module\_iam\_user\_drakeredwind01) | ./modules/aws-users | n/a |
 | <a name="module_iam_user_freaky4wrld"></a> [iam\_user\_freaky4wrld](#module\_iam\_user\_freaky4wrld) | ./modules/aws-users | n/a |
 | <a name="module_iam_user_jbubar"></a> [iam\_user\_jbubar](#module\_iam\_user\_jbubar) | ./modules/aws-users | n/a |
+| <a name="module_iam_user_lsousadev"></a> [iam\_user\_lsousadev](#module\_iam\_user\_lsousadev) | ./modules/aws-users | n/a |
+| <a name="module_iam_user_npang4"></a> [iam\_user\_npang4](#module\_iam\_user\_npang4) | ./modules/aws-users | n/a |
 | <a name="module_iam_user_rsakuma"></a> [iam\_user\_rsakuma](#module\_iam\_user\_rsakuma) | ./modules/aws-users | n/a |
 | <a name="module_iam_user_samuelusc"></a> [iam\_user\_samuelusc](#module\_iam\_user\_samuelusc) | ./modules/aws-users | n/a |
 | <a name="module_iam_user_shikha0428"></a> [iam\_user\_shikha0428](#module\_iam\_user\_shikha0428) | ./modules/aws-users | n/a |
