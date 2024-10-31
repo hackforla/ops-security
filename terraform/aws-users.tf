@@ -152,23 +152,23 @@ module "iam_user_alexe" {
   user_groups = ["ops-leads"]
 }
 
-module "iam_user_rsakuma"{
+module "iam_user_rsakuma" {
   source = "./modules/aws-users"
 
   user_name = "rsakuma"
   user_tags = {
-    "Project"	="devops-security"
+    "Project"      = "devops-security"
     "Access Level" = "1"
   }
   user_groups = ["read-only-group"]
 }
 
-module "iam_user_npang4"{
+module "iam_user_npang4" {
   source = "./modules/aws-users"
 
   user_name = "npang4"
   user_tags = {
-    "Project"	="devops-security"
+    "Project"      = "devops-security"
     "Access Level" = "1"
   }
   user_groups = ["read-only-group"]
@@ -178,6 +178,17 @@ module "iam_user_drakeredwind01" {
   source = "./modules/aws-users"
 
   user_name = "drakeredwind01"
+  user_tags = {
+    "Project"      = "devops-security"
+    "Access Level" = "1"
+  }
+  user_groups = ["read-only-group"]
+}
+
+module "iam_user_lsousadev" {
+  source = "./modules/aws-users"
+
+  user_name = "lsousadev"
   user_tags = {
     "Project"      = "devops-security"
     "Access Level" = "1"
