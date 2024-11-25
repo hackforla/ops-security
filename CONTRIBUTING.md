@@ -8,28 +8,18 @@ Below are guidelines for contributing to the devops-security repository hosted o
 **The team recommends using [VS Code](https://code.visualstudio.com/download) as the preferred text editor for working on code, but feel free to utilize a text editor of your preference.**
 
 **If you have any additional questions about your contribution process, please feel free to reach out to the team in the [#ops](https://hackforla.slack.com/archives/CV7QGL66B) Slack channel.**
-<br><br>
 
-## **Table of Contents**
-- [**How to Contribute to DevOps**](#how-to-contribute-to-devops)
-- [**Table of Contents**](#table-of-contents)
-- [**Setting up the local development environment**](#setting-up-the-local-development-environment)
-    - [**Creating a personal AWS account**](#creating-a-personal-aws-account)
-    - [**Login as root user & setup MFA**](#login-as-root-user-&-setup-mfa)
-    - [**Setting up IAM and AWS CLI**](#setting-up-iam-and-aws-cli)
-        - [**Create an IAM User**](#create-an-iam-user)
-        - [**Create an IAM Group**](#create-an-iam-group)
-        - [**Attach IAM user to IAM group**](#attach-iam-user-to-iam-group)
-        - [**Attach `AdministratorAccess` policy to IAM group**](#attach-administratoraccess-policy-to-iam-group)
-        - [**Generating Access Keys for AWS CLI**](#generating-access-keys-for-aws-cli)
-    - [**Installing Terraform**](#installing-terraform)
-    - [**Creating Backend State**](#creating-backend-state)
-    - [**Installing Terraform docs**](#installing-terraform-docs)
-    - [**Clone (Create) a copy on your computer**](#clone-create-a-copy-on-your-computer)
-    - [**Create a new branch where you will work on your issue**](#create-a-new-branch-where-you-will-work-on-your-issue)
-    - [**Creating Local tfvars file**](#creating-local-tfvars-file)
-    - [**Terraform Setup and Execution Instructions**](#terraform-setup-and-execution-instructions)
-    - [**Submitting changes via git and opening a PR**](#submitting-changes-via-git-and-opening-a-pr)
+### Overview
+
+- [Setting up the local development environment](#setting-up-the-local-development-environment)
+  - AWS identity and access management
+  - AWS CLI
+  - Terraform
+- [Submitting changes via git and opening a PR](#submitting-changes-via-git-and-opening-a-pr)
+
+### Table of Contents
+
+A generated table of contents is available on GitHub by [opening the outline icon](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#headings) at the top of the markdown preview window.
 
 ## **Setting up the local development environment**
 The below instructions will walk you through setting up your own AWS account for local development and testing before pushing changes that will effect our infrastructure. 
