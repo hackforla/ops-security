@@ -256,7 +256,7 @@ After creating a backend state, create a `backend.tfvars` file in the `terraform
 ```terraform
 bucket         = "USERNAME-hfla-ops-terraform-state"
 key            = "devops-security/terraform.tfstate"
-region         = "us-east-2"
+region         = "us-west-2"
 dynamodb_table = "hfla_ops_terraform_table"
 encrypt        = true
 ```
