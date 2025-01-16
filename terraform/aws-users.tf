@@ -149,7 +149,7 @@ module "iam_user_alexe" {
     "Project"      = "devops-security"
     "Access Level" = "1"
   }
-  user_groups = ["read-only-group"]
+  user_groups = ["ops-leads"]
 }
 
 module "iam_user_rsakuma" {
