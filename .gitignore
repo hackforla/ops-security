@@ -19,3 +19,6 @@ terraform.rc
 
 # Ignore metadata files
 *.tfstate.lock.info
+
+#Ignore lock file
+*.terraform.lock.hcl
