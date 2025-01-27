@@ -1,7 +1,8 @@
 ---
-name: 'DR: [NAME OF DECISION RECORD]'
-about: Describe this issue template's purpose here.
-title: ''
+name: Decision Record
+about: Research, Recommend, Write Decision Record, Get Sign Off, and Create Implementation
+  Issue
+title: 'DR: [NAME OF DECISION RECORD]'
 labels: 'complexity: missing, feature: missing, missing: milestone, role: missing,
   size: missing'
 assignees: ''
