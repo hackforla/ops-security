@@ -197,12 +197,23 @@ module "iam_user_lsousadev" {
 }
 
 module "iam_user_srinipandiyan" {
-source = "./modules/aws-users"
+  source = "./modules/aws-users"
 
-user_name = "srinipandiyan"
-user_tags = {
-  "Project"      = "devops-security"
-  "Access Level" = "1"
+  user_name = "srinipandiyan"
+  user_tags = {
+    "Project"      = "devops-security"
+    "Access Level" = "1"
+  }
+  user_groups = ["read-only-group"]
 }
-user_groups = ["read-only-group"]
+
+module "iam_user_bltomlin" {
+  source = "./modules/aws-users"
+
+  user_name = "bltomlin" # Replace with GitHub handle
+  user_tags = {
+    "Project"      = "devops-security"
+    "Access Level" = "1"
+  }
+  user_groups = ["read-only-group"]
 }
