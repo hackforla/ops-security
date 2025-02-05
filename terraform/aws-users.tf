@@ -206,7 +206,6 @@ user_tags = {
 }
 user_groups = ["read-only-group"]
 }
-
 module "iam_user_bltomlin" {
 source = "./modules/aws-users"
 
