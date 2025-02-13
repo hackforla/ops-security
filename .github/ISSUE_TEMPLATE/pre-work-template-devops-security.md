@@ -21,6 +21,7 @@ As a new member on the HfLA devops-security team, fill in the following fields a
 
 - [ ] Before starting to work on the below instructions, make sure to join the #ops Slack Channel. And are a member of `devops-security` repository.
 - [ ] Self-assign this issue (gear in right side panel).
+- [ ] Change the issue status to 'in progress' (right side panel).
 - [ ] Add this issue to the Project Board CoP: DevOps: Project Board - under the Projects section (gear in right side panel).
 - [ ] Attend weekly team meeting, Wednesdays 6-8pm PST.
   - [ ] Note: There are no meetings on the 1st Wednesday of every month.
@@ -52,14 +53,14 @@ As a new member on the HfLA devops-security team, fill in the following fields a
     ```bash
     # Replace USERNAME with your GitHub handle
     module "iam_user_USERNAME" {
-    source = "./modules/aws-users"
+      source = "./modules/aws-users"
 
-    user_name = "USERNAME" # Replace with GitHub handle
-    user_tags = {
-      "Project"      = "devops-security"
-      "Access Level" = "1"
-    }
-    user_groups = ["read-only-group"]
+      user_name = "USERNAME" # Replace with GitHub handle
+      user_tags = {
+        "Project"      = "devops-security"
+        "Access Level" = "1"
+      }
+      user_groups = ["read-only-group"]
     }
 
     ```
